@@ -11,6 +11,8 @@ export class UserController {
     return `HELLO ${firstName} ${lastName}`;
   }
 
+  //test
+
   @Get('/:id')
   getById(@Req() request: Request): string {
     return `GET ${request.params.id}`;
