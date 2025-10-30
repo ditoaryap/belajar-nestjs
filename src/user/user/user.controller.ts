@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Query, Req } from '@nestjs/common';
+import { Controller, Get, Param, Post, Query, Req } from '@nestjs/common';
 import type { Request } from 'express';
 
 @Controller('/api/users')
@@ -14,8 +14,8 @@ export class UserController {
   //test
 
   @Get('/:id')
-  getById(@Req() request: Request): string {
-    return `GET ${request.params.id}`;
+  getById(@Param('id') id: string): string {
+    return `GET ${id}`;
   }
 
   @Post()
